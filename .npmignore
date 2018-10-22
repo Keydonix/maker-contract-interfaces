@@ -1,0 +1,8 @@
+**/node_modules/
+/scripts/
+/source/.gitkeep
+.editorconfig
+.gitignore
+LICENSE
+README
+tsconfig.json

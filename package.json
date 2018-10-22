@@ -1,0 +1,26 @@
+{
+  "name": "@keydonix/maker-contract-interfaces",
+  "version": "1.0.0",
+  "description": "TypeScript classes for interfacing with Maker contracts.",
+  "main": "output/index.js",
+  "scripts": {
+    "build": "ts-node ./scripts/generate.ts && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keydonix/maker-contract-interfaces.git"
+  },
+  "author": "Keydonix",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Keydonix/maker-contract-interfaces/issues"
+  },
+  "homepage": "https://github.com/Keydonix/maker-contract-interfaces#readme",
+  "devDependencies": {
+    "@types/node": "10.12.0",
+    "solidity-typescript-generator": "1.0.3",
+    "ts-node": "7.0.1",
+    "typescript": "3.1.3"
+  }
+}
