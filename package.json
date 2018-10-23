@@ -5,7 +5,8 @@
   "main": "output/index.js",
   "scripts": {
     "build": "ts-node ./scripts/generate.ts && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
