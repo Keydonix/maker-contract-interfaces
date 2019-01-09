@@ -1,6 +1,6 @@
 {
   "name": "@keydonix/maker-contract-interfaces",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "TypeScript classes for interfacing with Maker contracts.",
   "main": "output/index.js",
   "scripts": {
