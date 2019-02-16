@@ -1,6 +1,6 @@
 {
   "name": "@keydonix/maker-contract-interfaces",
-  "version": "2.1.2",
+  "version": "3.0.0",
   "description": "TypeScript classes for interfacing with Maker contracts.",
   "main": "output/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/Keydonix/maker-contract-interfaces#readme",
   "devDependencies": {
     "@types/node": "10.12.18",
-    "solidity-typescript-generator": "1.1.1",
+    "solidity-typescript-generator": "2.0.0",
     "ts-node": "7.0.1",
     "typescript": "3.2.2"
   }
