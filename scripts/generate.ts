@@ -1,15 +1,18 @@
-import { generateContractInterfaces } from 'solidity-typescript-generator'
-import { readFile as readFileCallback, writeFile as writeFileCallback } from 'fs'
-import { join as pathJoin } from 'path'
-import { promisify } from 'util'
-const readFile = promisify(readFileCallback)
-const writeFile = promisify(writeFileCallback)
+import { promises as fs } from 'fs'
+import * as path from 'path'
+import { AbiDescription } from '@zoltu/ethereum-abi-encoder'
+import { generateContractInterfaces, CompilerOutput } from '@zoltu/solidity-typescript-generator'
 
 async function run() {
-	const makerCompilerOutputJson = await readFile(pathJoin(__dirname, './maker-compiler-output.json'), { encoding: 'utf8' })
-	const makerCompilerOutput = JSON.parse(makerCompilerOutputJson)
-	const contractInterfaces = generateContractInterfaces(makerCompilerOutput)
-	await writeFile(pathJoin(__dirname, '../source/index.ts'), contractInterfaces, { encoding: 'utf8' })
+	const mainnetAbiPath = path.join(__dirname, 'mainnet-abi')
+	const abis: Record<string, { abi: ReadonlyArray<AbiDescription>}> = {}
+	for (const filename of await fs.readdir(mainnetAbiPath)) {
+		const fileContentsJson = await fs.readFile(path.join(mainnetAbiPath, filename), 'utf8')
+		const abi = JSON.parse(fileContentsJson) as ReadonlyArray<AbiDescription>
+		abis[filename.slice(0, -4)] = { abi }
+	}
+	const contractInterfaces = await generateContractInterfaces({ contracts: { 'Maker.sol': abis } })
+	await fs.writeFile(path.join(__dirname, '../source/index.ts'), contractInterfaces, { encoding: 'utf8' })
 }
 
 run().then(() => {

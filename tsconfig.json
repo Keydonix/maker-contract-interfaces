@@ -1,19 +1,16 @@
 {
 	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es2015",
+		"target": "esnext",
+		"moduleResolution": "node",
 		"noImplicitAny": true,
 		"allowJs": false,
 		"strict": true,
 		"alwaysStrict": true,
-		"declaration": true,
-		"sourceMap": true,
-		"lib": [ "es2018", ],
+		"declaration": false,
+		"sourceMap": false,
+		"noEmit": true,
+		"lib": [ "es2019", ],
 		"rootDir": "source",
-		"outDir": "output",
 	},
-	"exclude": [
-		"scripts",
-		"output"
-	]
+	"include": [ "source/**/*.ts" ]
 }

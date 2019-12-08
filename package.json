@@ -1,27 +1,45 @@
 {
-  "name": "@keydonix/maker-contract-interfaces",
-  "version": "3.0.1",
-  "description": "TypeScript classes for interfacing with Maker contracts.",
-  "main": "output/index.js",
-  "scripts": {
-    "build": "ts-node ./scripts/generate.ts && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Keydonix/maker-contract-interfaces.git"
-  },
-  "author": "Keydonix",
-  "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/Keydonix/maker-contract-interfaces/issues"
-  },
-  "homepage": "https://github.com/Keydonix/maker-contract-interfaces#readme",
-  "devDependencies": {
-    "@types/node": "10.12.18",
-    "solidity-typescript-generator": "2.0.0",
-    "ts-node": "7.0.1",
-    "typescript": "3.3.3"
-  }
+	"name": "@keydonix/maker-contract-interfaces",
+	"version": "4.0.0",
+	"description": "TypeScript classes for interfacing with Maker contracts.",
+	"main": "output-node/index.js",
+	"module": "output-es/index.js",
+	"scripts": {
+		"build": "ts-node ./scripts/generate.ts && tsc --project tsconfig-es.json && tsc --project tsconfig-node.json",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Keydonix/maker-contract-interfaces.git"
+	},
+	"author": "Keydonix",
+	"license": "Unlicense",
+	"bugs": {
+		"url": "https://github.com/Keydonix/maker-contract-interfaces/issues"
+	},
+	"homepage": "https://github.com/Keydonix/maker-contract-interfaces#readme",
+	"dependencies": {
+		"@zoltu/ethereum-abi-encoder": "3.2.2"
+	},
+	"devDependencies": {
+		"@peculiar/webcrypto": "1.0.21",
+		"@zoltu/ethereum-abi-encoder": "3.2.2",
+		"@zoltu/ethereum-crypto": "2.1.1",
+		"@zoltu/ethereum-fetch-json-rpc": "11.0.0",
+		"@zoltu/ethereum-types": "8.3.0",
+		"@zoltu/solidity-typescript-generator": "3.0.2",
+		"@types/node-fetch": "2.5.4",
+		"@types/node": "12.12.14",
+		"node-fetch": "2.6.0",
+		"ts-node": "8.5.4",
+		"typescript": "3.7.3"
+	},
+	"files": [
+		"output-es/",
+		"output-node/",
+		"source/**/*.ts",
+		"LICENSE",
+		"README.md"
+	]
 }

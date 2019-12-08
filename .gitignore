@@ -1,3 +1,4 @@
 **/node_modules/
-/output/
-/source/
+/output-es/
+/output-node/
+/source/index.ts
