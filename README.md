@@ -8,7 +8,7 @@ Note: See sections below for implementation of `./dependencies` and `./utils`
 ```
 npm install @keydonix/maker-contract-interfaces
 ```
-Additionally in NodeJS:
+Additionally in NodeJS (not necessary in browser):
 ```
 npm install @peculiar/webcrypto
 ```
@@ -51,9 +51,9 @@ You can use whatever implementation of `Dependencies` you want, but the followin
 ```
 npm install @zoltu/ethereum-crypto @zoltu/ethereum-types @zoltu/ethereum-abi-encoder @zoltu/ethereum-fetch-json-rpc
 ```
-If you are using NodeJS (instead of browser) you'll also need to install:
+Additionally in NodeJS (not necessary in browser):
 ```
-npm install @peculiar/webcrypto node-fetch @types/node-fetch
+npm install node-fetch @types/node-fetch
 ```
 ```typescript
 import fetch from 'node-fetch' // only necessary in node, can delete this line in browser
